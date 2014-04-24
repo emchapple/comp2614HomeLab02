@@ -8,6 +8,9 @@ namespace COMP2614HomeLab02
 
 	public class Product
 	{
+
+		public static string SEPARATOR = ";";
+
 		private string description;
 		public string Description {
 			get{ return description; }
@@ -29,7 +32,42 @@ namespace COMP2614HomeLab02
 
 		public Product ()
 		{
+			productStatus = Status.ForSale;
 		}
+
+//		Sell changes the ProductStatus to Sold, but only if the object's ProductStatus is
+//			ForSale, otherwise, throw an Exception with an appropriate error message:
+//			throw new Exception(“Appropriate Error Message Here”);
+		public void Sell()
+		{
+			if (productStatus == Status.ForSale)
+			{
+				productStatus = Status.Sold;
+			} else 
+			{
+				throw new Exception( "Can't sell a product that is not for sale." );
+				}
+		}
+
+
+//		Ship changes the ProductStatus to Shipped, but only if the object's ProductStatus is
+//			Sold, otherwise, throw an Exception with an appropriate error message:
+//			throw new Exception(“Appropriate Error Message Here”);
+		public void Ship()
+		{
+			if (productStatus == Status.Sold) {
+				productStatus = Status.Shipped;
+			} else 
+			{
+				throw new Exception ("Can't ship unsold product.");
+			}
+		}
+
+		public override string ToString()
+		{
+			return String.Format ("{0}{1}{2}{3}{4}", productStatus, SEPARATOR, description, SEPARATOR,price);
+		}
+
 	}
 }
 
@@ -45,12 +83,8 @@ appropriate data types.
 an enumeration named Status. The enumeration has three values: ForSale, Sold and
 Shipped.
  Write three methods for the Product class: Sell, Ship and ToString.
- Sell changes the ProductStatus to Sold, but only if the object's ProductStatus is
-ForSale, otherwise, throw an Exception with an appropriate error message:
-throw new Exception(“Appropriate Error Message Here”);
- Ship changes the ProductStatus to Shipped, but only if the object's ProductStatus is
-Sold, otherwise, throw an Exception with an appropriate error message:
-throw new Exception(“Appropriate Error Message Here”);
+ 
+ 
  Override the Object class' ToString method, like this:
 public override string ToString()
 { ...
