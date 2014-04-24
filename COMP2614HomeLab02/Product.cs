@@ -35,6 +35,14 @@ namespace COMP2614HomeLab02
 			productStatus = Status.ForSale;
 		}
 
+		public Product(string description, Status productStatus, decimal price)
+		{
+			this.description = description;
+			this.productStatus = productStatus;
+			this.price = price;
+		}
+
+
 //		Sell changes the ProductStatus to Sold, but only if the object's ProductStatus is
 //			ForSale, otherwise, throw an Exception with an appropriate error message:
 //			throw new Exception(“Appropriate Error Message Here”);
@@ -65,7 +73,7 @@ namespace COMP2614HomeLab02
 
 		public override string ToString()
 		{
-			return String.Format ("{0}{1}{2}{3}{4}", productStatus, SEPARATOR, description, SEPARATOR,price);
+			return String.Format ("{0}{1}{2}{3}{4}", description , SEPARATOR, productStatus , SEPARATOR,price);
 		}
 
 	}
