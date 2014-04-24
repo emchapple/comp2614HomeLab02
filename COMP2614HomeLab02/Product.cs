@@ -1,4 +1,6 @@
 using System;
+using System.Text;
+using System.Reflection;
 
 namespace COMP2614HomeLab02
 {
@@ -8,8 +10,8 @@ namespace COMP2614HomeLab02
 
 	public class Product
 	{
-
-		public static string SEPARATOR = ";";
+		public static string KEY_SEPARATOR = "=";
+		public static string VALUE_SEPARATOR = ";";
 
 		private string description;
 		public string Description {
@@ -73,7 +75,20 @@ namespace COMP2614HomeLab02
 
 		public override string ToString()
 		{
-			return String.Format ("{0}{1}{2}{3}{4}", description , SEPARATOR, productStatus , SEPARATOR,price);
+			StringBuilder sb = new StringBuilder (1000);
+
+			PropertyInfo[] properties = this.GetType ().GetProperties ();
+
+			foreach(PropertyInfo property in properties)
+			{
+				sb.Append (property.Name);
+				sb.Append (KEY_SEPARATOR);
+				sb.Append(property.GetValue(this, null));
+				sb.Append (VALUE_SEPARATOR);
+			} 
+
+			return sb.ToString ();
+
 		}
 
 	}
@@ -81,21 +96,4 @@ namespace COMP2614HomeLab02
 
 
 
-/*Product class
-Your program must adhere to the following design:
- Write a class named Product in a separate source file.
- Write any appropriate constructor or constructors.
- Create three properties for this class: Description, Price and ProductStatus. Use
-appropriate data types.
- For the ProductStatus, you will also need to define the data type, which for this lab must be
-an enumeration named Status. The enumeration has three values: ForSale, Sold and
-Shipped.
- Write three methods for the Product class: Sell, Ship and ToString.
- 
- 
- Override the Object class' ToString method, like this:
-public override string ToString()
-{ ...
-Return (do not print, but return) a string that contains the ProductStatus, Description
-and Price of the object.
-*/
+
