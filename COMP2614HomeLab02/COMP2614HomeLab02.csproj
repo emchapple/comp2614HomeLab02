@@ -33,5 +33,6 @@
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Compile Include="Product.cs" />
+    <Compile Include="Program.cs" />
   </ItemGroup>
 </Project>

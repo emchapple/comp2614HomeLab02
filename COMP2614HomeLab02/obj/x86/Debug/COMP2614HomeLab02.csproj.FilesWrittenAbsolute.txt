@@ -1,0 +1,5 @@
+/Users/erin/.Trash/comp2614HomeLab02/COMP2614HomeLab02/obj/x86/Debug/.NETFramework,Version=v4.0.AssemblyAttribute.cs
+/Users/erin/.Trash/comp2614HomeLab02/COMP2614HomeLab02/bin/Debug/COMP2614HomeLab02.exe.mdb
+/Users/erin/.Trash/comp2614HomeLab02/COMP2614HomeLab02/bin/Debug/COMP2614HomeLab02.exe
+/Users/erin/.Trash/comp2614HomeLab02/COMP2614HomeLab02/obj/x86/Debug/COMP2614HomeLab02.exe
+/Users/erin/.Trash/comp2614HomeLab02/COMP2614HomeLab02/obj/x86/Debug/COMP2614HomeLab02.exe.mdb
