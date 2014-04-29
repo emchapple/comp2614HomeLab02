@@ -41,6 +41,8 @@ namespace COMP2614HomeLab02
 			DisplayInventory ();
 			ShipInventoryItem (1);
 			DisplayInventory ();
+
+			Console.WriteLine ("Done...");
 		}
 
 		public static string FormatForApplication(Product product)
@@ -72,7 +74,7 @@ namespace COMP2614HomeLab02
 
 		public static string GetMessage(string verb, int index)
 		{
-			return String.Format("{0} product {1}...", verb, index);
+			return String.Format("{0} product {1}...", verb, index+1);
 		}
 
 	

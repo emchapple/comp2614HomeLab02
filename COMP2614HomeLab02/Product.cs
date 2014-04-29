@@ -7,7 +7,9 @@ namespace COMP2614HomeLab02
 	public enum Status
 	{ForSale, Sold, Shipped}
 
-
+	/// <summary>
+	/// Simple class to represent a Product that has a price, description, and for sale status, and can be sold and shipped. 
+	/// </summary>
 	public class Product
 	{
 		public static string KEY_SEPARATOR = "=";
@@ -45,9 +47,10 @@ namespace COMP2614HomeLab02
 		}
 
 
-//		Sell changes the ProductStatus to Sold, but only if the object's ProductStatus is
-//			ForSale, otherwise, throw an Exception with an appropriate error message:
-//			throw new Exception(“Appropriate Error Message Here”);
+		/// <summary>
+		/// Sell changes the ProductStatus to Sold, but only if the object's ProductStatus is ForSale.
+		/// Otherwise, an exception is thwon.
+		/// </summary>
 		public void Sell()
 		{
 			if (productStatus == Status.ForSale)
@@ -56,13 +59,14 @@ namespace COMP2614HomeLab02
 			} else 
 			{
 				throw new Exception( "Can't sell a product that is not for sale." );
-				}
+			}
 		}
 
 
-//		Ship changes the ProductStatus to Shipped, but only if the object's ProductStatus is
-//			Sold, otherwise, throw an Exception with an appropriate error message:
-//			throw new Exception(“Appropriate Error Message Here”);
+		/// <summary>
+		/// Ship changes the ProductStatus to Shipped, but only if the object's ProductStatus is
+		///	Sold. Otherwise, an exception is thrown.
+		/// </summary>
 		public void Ship()
 		{
 			if (productStatus == Status.Sold) {
